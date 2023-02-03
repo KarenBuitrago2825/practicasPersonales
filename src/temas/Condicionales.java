@@ -41,9 +41,9 @@ public class Condicionales {
 		numero = consola.nextInt();
 
 		if (numero % 2 == 0) {
-			System.out.println("El numero" + numero + " es par");
+			System.out.println("El numero " + numero + " es par");
 		} else {
-			System.out.println("El numero" + numero + " es impar");
+			System.out.println("El numero " + numero + " es impar");
 		}
 
 		// E4
@@ -93,31 +93,66 @@ public class Condicionales {
 		}
 
 		// E7
-		String vegetariano, noVegetariano, decision, adicionalV, adicionalNV;
-		final String establecido = "Mozzarella y Tomate";
-
-		System.out.println("Desea usted una pizza vegetariana o no vegetarina?");
-		decision = consola.nextLine();
-
-		if (decision == "vegetariana") {
-			System.out.println("Elija un ingrediente adicional: Pimienta o Tofu");
-			adicionalV = consola.nextLine();
-			if (adicionalV == "Pimienta") {
-				System.out.println("Su pizza lleva Pimienta, " + establecido);
-			} else {
-				System.out.println("Su pizza es vegetariana y lleva Tofu, " + establecido);
-			}
-		} else {
-			System.out.println("Elija un ingrediente adicional : Peperoni, Jamon, o Salmon ");
-			adicionalNV = consola.nextLine();
-
-			if (adicionalNV == "Peperoni") {
-				System.out.println("Su pizza no es vegetariana lleva Peperoni, " + establecido);
-			} else if (adicionalNV == "Jamon") {
-				System.out.println("Su pizza no es vegetariana lleva Jamon, " + establecido);
-			} else {
-				System.out.println("Su pizza no es vegetariana lleva Salmon, " + establecido);
-			}
+		int comida, menuVegetariano, menuNoVegetariano;
+		final String establecido = "mozzarella y tomate";
+		
+		System.out.println("Elija su pizza: \n1. Vegetariana \n2. No vegetariana \n0. Salir");
+		comida = consola.nextInt();
+		
+		
+		switch(comida) {
+		case 1:
+			System.out.println("Selecciono pizza vegetariana");
+			System.out.println("Selecione \n1.Pimiento \n2 Tofu");
+			menuVegetariano = consola.nextInt();
+				switch (menuVegetariano) {
+				case 1: 
+					System.out.println("Su pizza es vegetariana y lleva pimiento, " + establecido);
+					break;
+					
+				case 2: 
+					System.out.println("Su pizza es vegetariana y lleva tofu, " + establecido);
+					break;
+					
+				default :
+					System.out.println("¡Ups! la opcion es invalida");
+					break;
+				}
+		
+			break;
+		
+		case 2 : 
+			System.out.println("Selecciono pizza no vegetariana");
+			System.out.println("Seleccione \n1.Peperoni \n2. Jamon \n3. Salmon");
+			menuNoVegetariano = consola.nextInt();
+			
+				switch (menuNoVegetariano) {
+				case 1 : 
+					System.out.println("Su pizza no es vegetariana y lleva peperoni, " + establecido);
+					break;
+					
+				case 2 : 
+					System.out.println("Su pizza no es vegetariana y lleva jamon, " + establecido);
+					break;
+					
+				case 3: 
+					System.out.println("Su pizza no es vegetariana y lleva salmon, " + establecido);
+					break;
+					
+				default :
+					System.out.println("¡Ups! la opcion es invalida");
+					break;
+				}
+				
+			break;
+			
+		case 0: 
+			System.out.println("Gracias por visitarnos");
+			break;
+			
+		default:
+			System.out.println("La opcion que registro es invalida");
+			break;
 		}
 		
 		
